@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Soap req1</name>
+   <name>ListCountries</name>
    <tag></tag>
-   <elementGuidId>e84d12f3-7873-4be1-a7b2-4329e037d0f7</elementGuidId>
+   <elementGuidId>bf233848-e35c-44cb-914e-d0583887f4ff</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <autoUpdateContent>true</autoUpdateContent>
@@ -17,26 +17,23 @@
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>text/xml; charset=utf-8</value>
-      <webElementGuid>0a309007-7356-4ced-b1fc-35f9b895c5de</webElementGuid>
+      <value>application/soap+xml; charset=utf-8</value>
+      <webElementGuid>78605800-c5c5-4bdd-ba20-0d79bb5ea977</webElementGuid>
    </httpHeaderProperties>
-   <katalonVersion>8.6.6</katalonVersion>
+   <katalonVersion>8.6.8</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <restRequestMethod></restRequestMethod>
    <restUrl></restUrl>
    <serviceType>SOAP</serviceType>
    <soapBody>&lt;Envelope xmlns=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;>
     &lt;Body>
-        &lt;Add xmlns=&quot;http://tempuri.org/&quot;>
-            &lt;intA>5&lt;/intA>
-            &lt;intB>5&lt;/intB>
-        &lt;/Add>
+        &lt;ListOfCountryNamesByName xmlns=&quot;http://www.oorsprong.org/websamples.countryinfo&quot;/>
     &lt;/Body>
 &lt;/Envelope></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
-   <soapServiceEndpoint>http://www.dneonline.com/calculator.asmx</soapServiceEndpoint>
-   <soapServiceFunction>Add</soapServiceFunction>
+   <soapServiceEndpoint>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso</soapServiceEndpoint>
+   <soapServiceFunction>ListOfCountryNamesByName</soapServiceFunction>
    <socketTimeout>-1</socketTimeout>
    <useServiceInfoFromWsdl>false</useServiceInfoFromWsdl>
    <verificationScript>import static org.assertj.core.api.Assertions.*
@@ -53,12 +50,6 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-
-
-
-WS.verifyElementPropertyValue(response, 'AddResponse.AddResult', '7')
-
-
 </verificationScript>
-   <wsdlAddress>http://www.dneonline.com/calculator.asmx?wsdl</wsdlAddress>
+   <wsdlAddress>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL</wsdlAddress>
 </WebServiceRequestEntity>
